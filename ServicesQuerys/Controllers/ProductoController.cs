@@ -10,18 +10,18 @@ using Belcorp.ServicesQuerys.Entities;
 namespace ServicesQuerys.Controllers
 {
     [Produces("application/json")]
-    [Route("api/MatrizProducto")]
-    public class MatrizProductoController : ControllerBase
+    [Route("api/Producto")]
+    public class ProductoController : ControllerBase
     {
         private readonly ISMatrizProducto isMatrizProducto;
 
-        public MatrizProductoController(ISMatrizProducto _isMatrizProducto) {
+        public ProductoController(ISMatrizProducto _isMatrizProducto) {
 
             isMatrizProducto = _isMatrizProducto;
         }
 
-        [HttpPost("getMatrizProductoProl")]
-        public async Task<List<MatrizProducto>> getMatrizProductoProl([FromBody]FiltroMatrizProducto filtroMatrizProducto) {
+        [HttpPost("MatrizProductoProl")]
+        public async Task<List<MatrizProducto>> MatrizProductoProl([FromBody]FiltroMatrizProducto filtroMatrizProducto) {
 
             List<MatrizProducto> matriz = new List<MatrizProducto>();
             try {
