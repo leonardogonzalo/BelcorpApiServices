@@ -1,0 +1,16 @@
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.csprojAssemblyReference.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.csproj.CoreCompileInputs.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.AssemblyInfoInputs.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.AssemblyInfo.cs
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.deps.json
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.csproj.CopyComplete
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Data\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Data.pdb

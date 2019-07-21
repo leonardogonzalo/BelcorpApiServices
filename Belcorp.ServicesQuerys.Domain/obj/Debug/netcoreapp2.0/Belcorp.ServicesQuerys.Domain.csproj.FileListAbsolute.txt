@@ -1,0 +1,12 @@
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.deps.json
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.pdb
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.csprojAssemblyReference.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.csproj.CoreCompileInputs.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.AssemblyInfoInputs.cache
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.AssemblyInfo.cs
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.csproj.CopyComplete
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.dll
+E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Domain.pdb
