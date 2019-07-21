@@ -682,11 +682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Belcorp\\Solutions\\SolutionBelcorpServices\\Belcorp.ServicesQuerys.Entities\\Belcorp.ServicesQuerys.Entities.csproj",
+      "projectUniqueName": "E:\\Belcorp\\Solutions\\BelcorpApiServices\\Belcorp.ServicesQuerys.Entities\\Belcorp.ServicesQuerys.Entities.csproj",
       "projectName": "Belcorp.ServicesQuerys.Entities",
-      "projectPath": "E:\\Belcorp\\Solutions\\SolutionBelcorpServices\\Belcorp.ServicesQuerys.Entities\\Belcorp.ServicesQuerys.Entities.csproj",
+      "projectPath": "E:\\Belcorp\\Solutions\\BelcorpApiServices\\Belcorp.ServicesQuerys.Entities\\Belcorp.ServicesQuerys.Entities.csproj",
       "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-      "outputPath": "E:\\Belcorp\\Solutions\\SolutionBelcorpServices\\Belcorp.ServicesQuerys.Entities\\obj\\",
+      "outputPath": "E:\\Belcorp\\Solutions\\BelcorpApiServices\\Belcorp.ServicesQuerys.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

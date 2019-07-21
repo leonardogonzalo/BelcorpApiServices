@@ -7,7 +7,7 @@ using Belcorp.ServicesQuerys.Entities;
 using Microsoft.Extensions.Configuration;
 using Belcorp.ServicesQuerys.Data.Repository;
 using Belcorp.ServicesQuerys.Data.Connection;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using Belcorp.ServicesQuerys.Constants;
 using System.Collections.Generic;
 
