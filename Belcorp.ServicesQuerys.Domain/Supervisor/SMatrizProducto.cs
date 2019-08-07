@@ -22,5 +22,14 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
             return await iMatrizProducto.GetMatrizProductoProl(isoPais,periodo,cuvs);
         }
 
+        public async Task<List<MatrizPromocion>> ListaMatrizPromociones(string isoPais, string periodo, string tipocatalogo)
+        {
+            return await iMatrizProducto.ListaMatrizPromociones(isoPais, periodo, tipocatalogo);
+        }
+
+        public async Task<List<MatrizPromocionNivel>> ListaMatrizPromocionesNivel(string isoPais, string periodo, string tipocatalogo)
+        {
+            return await iMatrizProducto.ListaMatrizPromocionesNivel(isoPais, periodo, tipocatalogo);
+        }
     }
 }

@@ -55,6 +55,40 @@ namespace Belcorp.ServicesQuerys.Data.Repository
 
         }
 
+        public async Task<List<MatrizPromocion>> ListaMatrizPromociones(string isoPais, string periodo, string tipocatalogo)
+        {
+            ConnetionString = _configuration.GetConnectionString(String.Format(Constants.Constants.ConnectionSql.ConnetionProl, isoPais));
 
+            MatrizProducto matrizProducto = new MatrizProducto();
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", periodo);
+            parameters.Add("@TIPO_CATALOGO", tipocatalogo);
+
+            using (IDbConnection con = ConectarSql())
+            {
+
+                return (await con.QueryAsync<MatrizPromocion>("P_MATRIZ_PROMOCIONES", parameters, commandType: CommandType.StoredProcedure)).AsList();
+            }
+        }
+
+        public async Task<List<MatrizPromocionNivel>> ListaMatrizPromocionesNivel(string isoPais, string periodo, string tipocatalogo)
+        {
+            ConnetionString = _configuration.GetConnectionString(String.Format(Constants.Constants.ConnectionSql.ConnetionProl, isoPais));
+
+            MatrizProducto matrizProducto = new MatrizProducto();
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", periodo);
+            parameters.Add("@TIPO_CATALOGO", tipocatalogo);
+
+            using (IDbConnection con = ConectarSql())
+            {
+
+                return (await con.QueryAsync<MatrizPromocionNivel>("P_MATRIZ_PROMOCIONES_Y_NIVELES", parameters, commandType: CommandType.StoredProcedure)).AsList();
+            }
+        }
     }
 }
