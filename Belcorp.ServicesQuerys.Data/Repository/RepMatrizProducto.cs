@@ -13,33 +13,21 @@ using System.Collections.Generic;
 
 namespace Belcorp.ServicesQuerys.Data.Repository
 {
-    public class RepMatrizProducto : IMatrizProducto<MatrizProducto>,IConnection
+    public class RepMatrizProducto : IMatrizProducto<MatrizProducto>
     {
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration configuration;
+        AbConnetion abConnetion;
         private String ConnetionString { get; set; }
-        public RepMatrizProducto(IConfiguration configuration)
+        public RepMatrizProducto(IConfiguration _configuration)
         {
-            _configuration = configuration;
+            configuration = _configuration;
         }
 
-        public IDbConnection ConectarSql()
-        {
-            return new SqlConnection(ConnetionString);
-        }
-        public IDbConnection ConectarOracle()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDbConnection ConectarMysql()
-        {
-            throw new NotImplementedException();
-        }
-
-
+ 
         public async Task<List<MatrizProducto>> GetMatrizProductoProl(string isoPais,string periodo,string cuvs)
         {
-            ConnetionString = _configuration.GetConnectionString(String.Format(Constants.Constants.ConnectionSql.ConnetionProl, isoPais));
+            
+            abConnetion =new  BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
 
             MatrizProducto matrizProducto = new MatrizProducto();
 
@@ -48,7 +36,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             parameters.Add("@COD_PERIODO",periodo);
             parameters.Add("@COD_VENTA",cuvs);
 
-            using (IDbConnection con=ConectarSql()) {
+            using (IDbConnection con = abConnetion.Conectar(isoPais)) {
 
                 return (await con.QueryAsync<MatrizProducto>("P_MATRIZ_PRODUCTO", parameters,commandType:CommandType.StoredProcedure)).AsList();
             }
@@ -57,7 +45,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
 
         public async Task<List<MatrizPromocion>> ListaMatrizPromociones(string isoPais, string periodo, string tipocatalogo)
         {
-            ConnetionString = _configuration.GetConnectionString(String.Format(Constants.Constants.ConnectionSql.ConnetionProl, isoPais));
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
 
             MatrizProducto matrizProducto = new MatrizProducto();
 
@@ -66,7 +54,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             parameters.Add("@COD_PERIODO", periodo);
             parameters.Add("@TIPO_CATALOGO", tipocatalogo);
 
-            using (IDbConnection con = ConectarSql())
+            using (IDbConnection con = abConnetion.Conectar(isoPais))
             {
 
                 return (await con.QueryAsync<MatrizPromocion>("P_MATRIZ_PROMOCIONES", parameters, commandType: CommandType.StoredProcedure)).AsList();
@@ -75,7 +63,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
 
         public async Task<List<MatrizPromocionNivel>> ListaMatrizPromocionesNivel(string isoPais, string periodo, string tipocatalogo)
         {
-            ConnetionString = _configuration.GetConnectionString(String.Format(Constants.Constants.ConnectionSql.ConnetionProl, isoPais));
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
 
             MatrizProducto matrizProducto = new MatrizProducto();
 
@@ -84,7 +72,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             parameters.Add("@COD_PERIODO", periodo);
             parameters.Add("@TIPO_CATALOGO", tipocatalogo);
 
-            using (IDbConnection con = ConectarSql())
+            using (IDbConnection con = abConnetion.Conectar(isoPais))
             {
 
                 return (await con.QueryAsync<MatrizPromocionNivel>("P_MATRIZ_PROMOCIONES_Y_NIVELES", parameters, commandType: CommandType.StoredProcedure)).AsList();
