@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Interfaces\IMatrizConcurso.cs~RF36167462.TMP" />
     <None Remove="Interfaces\IMatrizProducto.cs~RF27d754af.TMP" />
   </ItemGroup>
 
