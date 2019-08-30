@@ -21,19 +21,17 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             configuration = _configuration;
         }
 
-        public async Task<List<RangoConcurso>> GetRangoConcurso(string isoPais, string periodo)
+        public async Task<List<ConcursoPremioRango>> GetRangoConcurso(string isoPais, string periodo)
         {
             abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
             var parameters = new DynamicParameters();
 
             parameters.Add("COD_PERIODO", periodo);
 
-            RangoConcurso rangoConcurso = new RangoConcurso();
-
 
             using (IDbConnection con = abConnetion.Conectar(isoPais))
             {
-                return (await con.QueryAsync<RangoConcurso>("P_RANGO_CONCURSO_PAIS", parameters, commandType: CommandType.StoredProcedure)).AsList();
+                return (await con.QueryAsync<ConcursoPremioRango>("P_RANGO_CONCURSO_PAIS", parameters, commandType: CommandType.StoredProcedure)).AsList();
             }
          }
     }

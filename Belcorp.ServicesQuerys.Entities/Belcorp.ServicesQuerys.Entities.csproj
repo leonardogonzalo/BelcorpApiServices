@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ConcursoPremioRango.cs~RF4129e790.TMP" />
+  </ItemGroup>
+
 </Project>
