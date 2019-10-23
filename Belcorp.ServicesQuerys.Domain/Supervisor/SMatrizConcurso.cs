@@ -20,45 +20,73 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
 
             RangoConcurso rangoConcurso;
             RangoPremio rangoPremio;
+            ConcursoPaisCampania oconcursoPaisCampania;
 
             List<ConcursoPremioRango> listconcursoPremioRangos = new List<ConcursoPremioRango>();
+            List<ConcursoPaisCampania> oListconcursoPaisCampania = new List<ConcursoPaisCampania>();
 
-            listconcursoPremioRangos= await imatrizConcurso.GetRangoConcurso(isoPais, periodo);
 
+
+            listconcursoPremioRangos = await imatrizConcurso.GetRangoConcurso(isoPais, periodo);
+
+            
             int contador = 1;
-            
-            
-            foreach(var item in listconcursoPremioRangos) {
-
-                rangoConcurso = new RangoConcurso();
-                rangoPremio = new RangoPremio();
-                rangoConcurso.codigoPeriodo = item.cod_periodo;
-                rangoConcurso.numeroRango = contador;
-                rangoConcurso.rangoInferior = (item.rango_inferior).ToString();
-                rangoConcurso.rangoSuperior = (item.rango_superior).ToString();
+            string campania = string.Empty;
+            int numero_nivel = 0;
+            int numero_rango_item = 0;
 
 
-                rangoPremio.codigoVenta = item.cod_venta;
-                rangoPremio.codigoEstrategia = item.estrategia;
-                rangoPremio.numeroNivel = item.numero_nivel;
-                rangoPremio.indicadorDigitable = item.digitable;
-                rangoPremio.cantidad = item.unidad;
+            foreach (var item in listconcursoPremioRangos)
+            {
+                campania = item.cod_periodo;
+                numero_nivel = item.numero_nivel;
+                numero_rango_item = item.numero_rango;
 
-                rangoConcurso.listaPremio.Add(rangoPremio);
+                if (!oListconcursoPaisCampania.Exists(i=>i.cod_periodo==campania&i.numero_nivel==numero_nivel&i.numero_rango==numero_rango_item)){
 
-                lisrangoConcursos.Add(rangoConcurso);
+                    oconcursoPaisCampania = new ConcursoPaisCampania();
+                    oconcursoPaisCampania.cod_periodo = item.cod_periodo;
+                    oconcursoPaisCampania.numero_nivel = item.numero_nivel;
+                    oconcursoPaisCampania.numero_rango = item.numero_rango;
+                    oconcursoPaisCampania.rango_inferior = item.rango_inferior;
+                    oconcursoPaisCampania.rango_superior = item.rango_superior;
+                    oListconcursoPaisCampania.Add(oconcursoPaisCampania);
+                }
 
-                contador++;
 
             }
 
-            
+
+            foreach (var item in oListconcursoPaisCampania) {
 
 
 
-                
-            
+                    numero_rango_item = item.numero_rango;
 
+                    rangoConcurso = new RangoConcurso();
+                   
+                    rangoConcurso.codigoPeriodo = item.cod_periodo;
+                    rangoConcurso.numeroRango = item.numero_rango;
+                    rangoConcurso.rangoInferior = (item.rango_inferior).ToString();
+                    rangoConcurso.rangoSuperior = (item.rango_superior).ToString();
+
+                foreach (var itempremio in listconcursoPremioRangos.FindAll(itempremio=> itempremio.numero_rango==numero_rango_item)) {
+                    rangoPremio = new RangoPremio();
+                    rangoPremio.codigoVenta = itempremio.cod_venta;
+                    rangoPremio.codigoEstrategia = itempremio.estrategia;
+                    rangoPremio.numeroNivel = itempremio.numero_nivel;
+                    rangoPremio.indicadorDigitable = itempremio.digitable;
+                    rangoPremio.cantidad = itempremio.unidad;
+
+                    rangoConcurso.listaPremio.Add(rangoPremio);
+
+                    contador++;
+                }
+
+
+                    lisrangoConcursos.Add(rangoConcurso);
+  
+            }
 
 
             return lisrangoConcursos;
