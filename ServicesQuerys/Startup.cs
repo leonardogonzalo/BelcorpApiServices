@@ -36,6 +36,9 @@ namespace ServicesQuerys
             services.AddTransient<ISMatrizConcurso, SMatrizConcurso>();
             services.AddTransient<IMatrizConcurso<RangoConcurso>, RepMatrizConcurso>();
 
+            services.AddTransient<ISMontosWeb,SMontosWeb>();
+            services.AddTransient<IMontosWeb,RepMontosWeb>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

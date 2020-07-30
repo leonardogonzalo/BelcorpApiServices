@@ -7,6 +7,8 @@
   <ItemGroup>
     <None Remove="Interfaces\IMatrizConcurso.cs~RF36167462.TMP" />
     <None Remove="Interfaces\IMatrizProducto.cs~RF27d754af.TMP" />
+    <None Remove="Interfaces\IMontosWeb.cs~RF1967103d.TMP" />
+    <None Remove="Interfaces\IMontosWeb.cs~RF19896df8.TMP" />
   </ItemGroup>
 
   <ItemGroup>

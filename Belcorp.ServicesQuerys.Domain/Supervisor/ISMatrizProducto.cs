@@ -13,5 +13,8 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
 
         Task<List<MatrizPromocionNivel>> ListaMatrizPromocionesNivel(string isoPais, string periodo, string tipocatalogo);
 
+        Task<List<StockSapBin>> ConsultarStockSapVenta(string isoPais, string periodo, string lcodigosap);
+        Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap);
+
     }
 }

@@ -17,6 +17,16 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
             iMatrizProducto = _iMatrizProducto;
         }
 
+        public async Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap)
+        {
+            return await iMatrizProducto.ConsultarStockSapFacturacion(isoPais, periodo, lcodigosap);
+        }
+
+        public async Task<List<StockSapBin>> ConsultarStockSapVenta(string isoPais, string periodo, string lcodigosap)
+        {
+            return await iMatrizProducto.ConsultarStockSapVenta(isoPais, periodo, lcodigosap);
+        }
+
         public async Task<List<MatrizProducto>> GetMatrizProductoProl(string isoPais,string periodo,string cuvs)
         {
             return await iMatrizProducto.GetMatrizProductoProl(isoPais,periodo,cuvs);

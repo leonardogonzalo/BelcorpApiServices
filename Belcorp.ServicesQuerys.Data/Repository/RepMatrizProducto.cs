@@ -78,5 +78,40 @@ namespace Belcorp.ServicesQuerys.Data.Repository
                 return (await con.QueryAsync<MatrizPromocionNivel>("P_MATRIZ_PROMOCIONES_Y_NIVELES", parameters, commandType: CommandType.StoredProcedure)).AsList();
             }
         }
+        public async Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap)
+        {
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", periodo);
+
+            parameters.Add("@LISTA_COD_SAP",lcodigosap);
+
+            using (IDbConnection con = abConnetion.Conectar(isoPais))
+            {
+
+                return (await con.QueryAsync<StockSapBin>("P_CONSULTA_SAP_FACTURACION", parameters, commandType: CommandType.StoredProcedure)).AsList();
+            }
+        }
+        public async Task<List<StockSapBin>> ConsultarStockSapVenta(string isoPais, string periodo, string lcodigosap)
+        {
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_SOMOSBELCORP);
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", periodo);
+
+            parameters.Add("@LISTA_COD_SAP", lcodigosap);
+
+            using (IDbConnection con = abConnetion.Conectar(isoPais))
+            {
+
+                return (await con.QueryAsync<StockSapBin>("P_CONSULTA_SAP_VENTA", parameters, commandType: CommandType.StoredProcedure)).AsList();
+            }
+        }
+
+
+
     }
 }

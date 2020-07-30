@@ -66,6 +66,7 @@ namespace Belcorp.ServicesQuerys.Data.Connection
                     case "PE": return string.Format(bdSB, "Peru");
                     case "CO": return string.Format(bdSB, "Colombia");
                     case "MX": return string.Format(bdSB, "Mexico");
+                    case "PA": return string.Format(bdSB, "Panama");
                     default: return null;
                 }
 

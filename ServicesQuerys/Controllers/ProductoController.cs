@@ -77,6 +77,36 @@ namespace ServicesQuerys.Controllers
             }
         }
 
+        [HttpPost("ConsultaStockPorSap")]
+
+        public async Task<List<StockSapBin>> ConsultaStockSap([FromBody] FConsultaStock FiltroConsultaStock) {
+
+            List<StockSapBin> stockSapBins = new List<StockSapBin>();
+
+            try
+            {
+                /**Si esta en sus días de facturación**/
+                if (FiltroConsultaStock.FlagFacturacion == 1)
+                {
+                    return (await isMatrizProducto.ConsultarStockSapFacturacion(FiltroConsultaStock.Pais, FiltroConsultaStock.Campania, FiltroConsultaStock.ListaSap));
+                }
+
+                /**Si esta fuera de sus días de facturación - Días Venta**/
+
+                
+
+                return (await isMatrizProducto.ConsultarStockSapVenta(FiltroConsultaStock.Pais, FiltroConsultaStock.Campania, FiltroConsultaStock.ListaSap));
+            }
+            catch (Exception ex)
+            {
+                stockSapBins.Add(new StockSapBin() { CodigoSap="0" });
+            }
+
+            return stockSapBins;
+        }
+
+        /**Obtener productos set***/
+
 
     }
 }
