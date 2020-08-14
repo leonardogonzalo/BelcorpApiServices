@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Belcorp.ServicesQuerys.Domain.Supervisor;
 using Belcorp.ServicesQuerys.Entities;
+using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
+
 
 namespace ServicesQuerys.Controllers
 {
@@ -18,6 +20,22 @@ namespace ServicesQuerys.Controllers
         public ProductoController(ISMatrizProducto _isMatrizProducto) {
 
             isMatrizProducto = _isMatrizProducto;
+        }
+
+        [HttpPost("Ofertas_catalogo")]
+        public async Task<ObjOfertaCatalogos> Ofertas_catalogo([FromBody]EInputOfertaCatalogo eInputOferta) {
+
+            ObjOfertaCatalogos objOferta = new ObjOfertaCatalogos();
+            try {
+
+                return await isMatrizProducto.Ofertas_catalogo(eInputOferta);
+            }
+            catch (Exception ex) {
+                objOferta.msjerror = ex.Message.ToString();
+            }
+
+            return objOferta;
+
         }
 
         [HttpPost("MatrizProductoProl")]
@@ -104,8 +122,6 @@ namespace ServicesQuerys.Controllers
 
             return stockSapBins;
         }
-
-        /**Obtener productos set***/
 
 
     }

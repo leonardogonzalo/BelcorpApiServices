@@ -1,4 +1,5 @@
 ﻿using Belcorp.ServicesQuerys.Entities;
+using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace Belcorp.ServicesQuerys.Domain.Interfaces
 
         Task<List<StockSapBin>> ConsultarStockSapVenta(string isoPais, string periodo, string lcodigosap);
         Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap);
+
+        Task<ObjOfertaCatalogos> Ofertas_catalogo(EInputOfertaCatalogo ofertaCatalogo);
 
     }
 }
