@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Belcorp.ServicesQuerys.Entities.Emontosweb;
 using System;
+using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
 
 namespace ServicesQuerys.Controllers
 {
@@ -43,6 +44,30 @@ namespace ServicesQuerys.Controllers
             }
             
             return montosPROL;
+
+        }
+
+        [HttpPost("MontoFestivalNivel")]
+        public async Task<FestivalDescuentoNivel> MontoFestivalNivel([FromBody] EFestival festival) {
+
+            FestivalDescuentoNivel listFestivalesDescuento = new FestivalDescuentoNivel();
+
+            try {
+
+                listFestivalesDescuento = await iSMontoWeb.MontoFestivalNivel(festival);
+            }
+            catch (Exception ex) {
+
+                listFestivalesDescuento.periodo = "0";
+                listFestivalesDescuento.cuvFestival = "0";
+                listFestivalesDescuento.montoTotalApoyo = "0";
+                listFestivalesDescuento.montoDescuentoNivel = "0";
+                listFestivalesDescuento.msjerror = ex.Message.ToString();
+                
+
+            }
+
+            return listFestivalesDescuento;
 
         }
 

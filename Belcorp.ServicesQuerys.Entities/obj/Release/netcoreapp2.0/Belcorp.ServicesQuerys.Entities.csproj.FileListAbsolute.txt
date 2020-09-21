@@ -1,9 +1,0 @@
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\bin\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.deps.json
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\bin\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.dll
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\bin\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.pdb
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.csprojAssemblyReference.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.csproj.CoreCompileInputs.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.AssemblyInfoInputs.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.AssemblyInfo.cs
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.dll
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Entities\obj\Release\netcoreapp2.0\Belcorp.ServicesQuerys.Entities.pdb

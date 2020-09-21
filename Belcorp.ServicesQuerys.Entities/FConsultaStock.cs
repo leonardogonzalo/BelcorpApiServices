@@ -10,5 +10,6 @@ namespace Belcorp.ServicesQuerys.Entities
         public string Campania { get; set; }
         public string ListaSap { get; set; }
         public int FlagFacturacion { get; set; }
+
     }
 }

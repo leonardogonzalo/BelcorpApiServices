@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Belcorp.ServicesQuerys.Domain.Interfaces;
 using Belcorp.ServicesQuerys.Entities.Emontosweb;
+using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
 
 namespace Belcorp.ServicesQuerys.Domain.Supervisor
 {
@@ -13,6 +14,20 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
 
         public SMontosWeb(IMontosWeb _IMontosWeb) {
                 this._IMontosWeb = _IMontosWeb;
+        }
+
+        public async Task<FestivalDescuentoNivel> MontoFestivalNivel(EFestival festival)
+        {
+            FestivalDescuentoNivel festivalDescuentoNivels = new FestivalDescuentoNivel();
+
+            try {
+                festivalDescuentoNivels = await _IMontosWeb.MontoFestivalNivel(festival);
+            }
+            catch {
+                throw;
+            }
+
+            return festivalDescuentoNivels;
         }
 
         public async Task<List<MontosPROL>> MontosWeb(RqMontosWeb rqMontosWeb)
