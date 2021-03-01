@@ -1,5 +1,6 @@
 ﻿using Belcorp.ServicesQuerys.Data.Connection;
 using Belcorp.ServicesQuerys.Domain.Interfaces;
+using Belcorp.ServicesQuerys.Entities.EDescuentosWeb;
 using Belcorp.ServicesQuerys.Entities.Emontosweb;
 using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
 using Dapper;
@@ -33,7 +34,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             parameters.Add("@PERIODO", rqMontosWeb.periodo);
             parameters.Add("@ZONA", rqMontosWeb.zona);
             parameters.Add("@COD_CONSULTORA", rqMontosWeb.codigoconsultora);
-            parameters.Add("@@LISTA_CONCURSOS", rqMontosWeb.Listaconcursos);
+            parameters.Add("@LISTA_CONCURSOS", rqMontosWeb.Listaconcursos);
 
             using (IDbConnection con = abConnetion.Conectar(rqMontosWeb.pais))
             {
@@ -52,7 +53,38 @@ namespace Belcorp.ServicesQuerys.Data.Repository
             
             using (IDbConnection con = abConnetion.Conectar(festival.pais))
             {
-                return (await con.QueryFirstAsync<FestivalDescuentoNivel>("P_MONTOS_NIVELES_WEB", parameters, commandType: CommandType.StoredProcedure));
+                var respuesta = await con.QueryFirstOrDefaultAsync<FestivalDescuentoNivel>("P_MONTOS_NIVELES_WEB", parameters, commandType: CommandType.StoredProcedure);
+
+                if (respuesta == null) {
+                    respuesta = new FestivalDescuentoNivel()
+                    {
+                        periodo = festival.periodo,
+                        cuvFestival = "00000",
+                        montoDescuentoNivel = "0",
+                        montoTotalApoyo = "0",
+                        msjerror = "No existe registros"
+                    };
+                }
+
+                return respuesta;
+            }
+        }
+
+        public async Task<List<DescuentoProducto>> DescuentoProductoWeb(EDescuentoWebProducto descuentoproducto)
+        {
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@PERIODO", descuentoproducto.campania);
+            parameters.Add("@COD_CONSULTORA", descuentoproducto.codigoConsultora);
+            parameters.Add("@ZONA", descuentoproducto.zona);
+            parameters.Add("@MONTO_TOTAL", descuentoproducto.montoPedido);
+            parameters.Add("@CUVS", descuentoproducto.listaCuv);
+            parameters.Add("@CANTIDADES", descuentoproducto.listaCantidad);
+
+            using (IDbConnection con = abConnetion.Conectar(descuentoproducto.pais))
+            {
+                return (await con.QueryAsync<DescuentoProducto>("P_DESCUENTO_PRODUCTOS_WEB", parameters, commandType: CommandType.StoredProcedure)).AsList();
             }
         }
     }

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Belcorp.ServicesQuerys.Entities.EmontosWebNiveles
+﻿namespace Belcorp.ServicesQuerys.Entities.EmontosWebNiveles
 {
     public class FestivalDescuentoNivel
     {
+     
         public string periodo { get; set; }
         public string cuvFestival { get; set; }
         public string montoTotalApoyo { get; set; }

@@ -1,4 +1,5 @@
-﻿using Belcorp.ServicesQuerys.Entities.Emontosweb;
+﻿using Belcorp.ServicesQuerys.Entities.EDescuentosWeb;
+using Belcorp.ServicesQuerys.Entities.Emontosweb;
 using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,7 @@ namespace Belcorp.ServicesQuerys.Domain.Interfaces
     {
         Task<List<SQLRqsMontos>> MontosWeb(RqMontosWeb rqMontosWeb);
         Task<FestivalDescuentoNivel> MontoFestivalNivel(EFestival festival);
+
+        Task<List<DescuentoProducto>> DescuentoProductoWeb(EDescuentoWebProducto descuentoproducto);
     }
 }

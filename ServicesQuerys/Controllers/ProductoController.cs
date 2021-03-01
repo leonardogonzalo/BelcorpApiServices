@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Belcorp.ServicesQuerys.Domain.Supervisor;
 using Belcorp.ServicesQuerys.Entities;
 using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
-
+using Belcorp.ServicesQuerys.Entities.EStockFicticio;
+using Belcorp.ServicesQuerys.Entities.ETombola;
 
 namespace ServicesQuerys.Controllers
 {
@@ -111,8 +112,6 @@ namespace ServicesQuerys.Controllers
 
                 /**Si esta fuera de sus días de facturación - Días Venta**/
 
-                
-
                 return (await isMatrizProducto.ConsultarStockSapVenta(FiltroConsultaStock.Pais, FiltroConsultaStock.Campania, FiltroConsultaStock.ListaSap));
             }
             catch (Exception ex)
@@ -121,6 +120,38 @@ namespace ServicesQuerys.Controllers
             }
 
             return stockSapBins;
+        }
+
+        [HttpPost("CargaStockFicticio")]
+        public async Task<RpFicticioWeb> CargaStockFicticio([FromBody]RsFicticioWeb rsFicticioWeb) {
+
+            RpFicticioWeb respuesta = new RpFicticioWeb();
+            try
+            {
+                respuesta=await isMatrizProducto.CargarFictio(rsFicticioWeb);
+
+            }
+            catch (Exception ex) {
+                respuesta.mensaje= ex.Message.ToString();
+            }
+
+            return respuesta;
+        }
+
+        [HttpPost("ConfiguracionTombola")]
+        public async Task<RpTombolaWeb> ConfiguracionTombola([FromBody]RsTombolaWeb rsTombolaWeb)
+        {
+            RpTombolaWeb respuesta = new RpTombolaWeb();
+            try
+            {
+                respuesta = await isMatrizProducto.CargarTombola(rsTombolaWeb);
+            }
+            catch (Exception ex) {
+                respuesta.mensaje = ex.Message.ToString();
+            }
+
+            return respuesta;
+
         }
 
 

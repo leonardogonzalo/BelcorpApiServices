@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Belcorp.ServicesQuerys.Entities;
+using Belcorp.ServicesQuerys.Entities.EStockFicticio;
+using Belcorp.ServicesQuerys.Entities.ETombola;
 using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
 
 namespace Belcorp.ServicesQuerys.Domain.Supervisor
@@ -18,5 +20,8 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
         Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap);
 
         Task<ObjOfertaCatalogos> Ofertas_catalogo(EInputOfertaCatalogo ofertaCatalogo);
+
+        Task<RpFicticioWeb> CargarFictio(RsFicticioWeb rsqFicticioWeb);
+        Task<RpTombolaWeb> CargarTombola(RsTombolaWeb rsTombolaWeb);
     }
 }

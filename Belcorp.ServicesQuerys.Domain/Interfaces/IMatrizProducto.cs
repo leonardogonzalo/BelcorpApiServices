@@ -1,4 +1,6 @@
 ﻿using Belcorp.ServicesQuerys.Entities;
+using Belcorp.ServicesQuerys.Entities.EStockFicticio;
+using Belcorp.ServicesQuerys.Entities.ETombola;
 using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace Belcorp.ServicesQuerys.Domain.Interfaces
         Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap);
 
         Task<ObjOfertaCatalogos> Ofertas_catalogo(EInputOfertaCatalogo ofertaCatalogo);
-
+        Task<RpFicticioWeb> CargarFictio(RsFicticioWeb rsqFicticioWeb);
+        Task<RpTombolaWeb> CargarTombola(RsTombolaWeb rsTombolaWeb);
     }
 }

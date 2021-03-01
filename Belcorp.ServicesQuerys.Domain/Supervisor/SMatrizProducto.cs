@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Belcorp.ServicesQuerys.Entities;
 using Belcorp.ServicesQuerys.Domain.Interfaces;
 using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
+using Belcorp.ServicesQuerys.Entities.EStockFicticio;
+using Belcorp.ServicesQuerys.Entities.ETombola;
 
 namespace Belcorp.ServicesQuerys.Domain.Supervisor
 {
@@ -16,6 +18,16 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
         public SMatrizProducto(IMatrizProducto<MatrizProducto> _iMatrizProducto) {
 
             iMatrizProducto = _iMatrizProducto;
+        }
+
+        public async  Task<RpFicticioWeb> CargarFictio(RsFicticioWeb rsqFicticioWeb)
+        {
+            return await iMatrizProducto.CargarFictio(rsqFicticioWeb);
+        }
+
+        public async Task<RpTombolaWeb> CargarTombola(RsTombolaWeb rsTombolaWeb)
+        {
+            return await iMatrizProducto.CargarTombola(rsTombolaWeb);
         }
 
         public async Task<List<StockSapBin>> ConsultarStockSapFacturacion(string isoPais, string periodo, string lcodigosap)

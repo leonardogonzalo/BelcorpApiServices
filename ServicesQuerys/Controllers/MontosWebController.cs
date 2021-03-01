@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Belcorp.ServicesQuerys.Entities.Emontosweb;
 using System;
 using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
+using Belcorp.ServicesQuerys.Entities.EDescuentosWeb;
 
 namespace ServicesQuerys.Controllers
 {
@@ -68,6 +69,30 @@ namespace ServicesQuerys.Controllers
             }
 
             return listFestivalesDescuento;
+
+        }
+
+        [HttpPost("DescuentoProductoWeb")]
+        public async Task<List<DescuentoProducto>> DescuentoProductoWeb([FromBody] EDescuentoWebProducto descuentoWebProducto) {
+
+            List<DescuentoProducto> listDescuentoProducto = new List<DescuentoProducto>();
+
+            try {
+                listDescuentoProducto = await iSMontoWeb.DescuentoProductoWeb(descuentoWebProducto);
+            }
+            catch (Exception ex) {
+
+                listDescuentoProducto.Add(new DescuentoProducto()
+                {
+                    codigoVenta = "0",
+                    porcentajeDescuento=0,
+                    tipoDescuento = "",
+                    error = ex.Message.ToString()
+                });
+
+            }
+
+            return listDescuentoProducto;
 
         }
 

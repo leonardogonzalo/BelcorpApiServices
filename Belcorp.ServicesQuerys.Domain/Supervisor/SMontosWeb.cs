@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Belcorp.ServicesQuerys.Domain.Interfaces;
+using Belcorp.ServicesQuerys.Entities.EDescuentosWeb;
 using Belcorp.ServicesQuerys.Entities.Emontosweb;
 using Belcorp.ServicesQuerys.Entities.EmontosWebNiveles;
 
@@ -14,6 +15,17 @@ namespace Belcorp.ServicesQuerys.Domain.Supervisor
 
         public SMontosWeb(IMontosWeb _IMontosWeb) {
                 this._IMontosWeb = _IMontosWeb;
+        }
+
+        public async Task<List<DescuentoProducto>> DescuentoProductoWeb(EDescuentoWebProducto descuentoproducto)
+        {
+
+            List<DescuentoProducto> _listDescuentoProductos = new List<DescuentoProducto>();
+
+            _listDescuentoProductos = await _IMontosWeb.DescuentoProductoWeb(descuentoproducto);
+
+            return _listDescuentoProductos;
+
         }
 
         public async Task<FestivalDescuentoNivel> MontoFestivalNivel(EFestival festival)

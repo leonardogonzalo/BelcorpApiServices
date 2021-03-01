@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Belcorp.ServicesQuerys.Domain.Interfaces;
 using Belcorp.ServicesQuerys.Entities;
 using Microsoft.Extensions.Configuration;
-using Belcorp.ServicesQuerys.Data.Repository;
 using Belcorp.ServicesQuerys.Data.Connection;
 using System.Data.SqlClient;
 using Belcorp.ServicesQuerys.Constants;
 using System.Collections.Generic;
 using Belcorp.ServicesQuerys.Entities.OfertaCatalogo;
+using Belcorp.ServicesQuerys.Entities.EStockFicticio;
+using Belcorp.ServicesQuerys.Entities.ETombola;
 
 namespace Belcorp.ServicesQuerys.Data.Repository
 {
@@ -97,7 +98,7 @@ namespace Belcorp.ServicesQuerys.Data.Repository
         }
         public async Task<List<StockSapBin>> ConsultarStockSapVenta(string isoPais, string periodo, string lcodigosap)
         {
-            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_SOMOSBELCORP);
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
 
             var parameters = new DynamicParameters();
 
@@ -158,8 +159,42 @@ namespace Belcorp.ServicesQuerys.Data.Repository
                 } ; 
 
             }
-
             return objOfertaCatalogos;
+        }
+
+        public async Task<RpFicticioWeb> CargarFictio(RsFicticioWeb rsqFicticioWeb)
+        {
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", rsqFicticioWeb.periodo);
+            parameters.Add("@LISTASAPS", rsqFicticioWeb.listaSap);
+            parameters.Add("@LISTAUNIDADES", rsqFicticioWeb.listaUnidades);
+
+            using (IDbConnection con = abConnetion.Conectar(rsqFicticioWeb.isoPais))
+            {
+
+                return (await con.QueryFirstAsync<RpFicticioWeb>("P_CARGAR_FICTICIO_WEB", parameters, commandType: CommandType.StoredProcedure));
+            }
+
+        }
+
+        public async Task<RpTombolaWeb> CargarTombola(RsTombolaWeb rsTombolaWeb)
+        {
+            abConnetion = new BaseConnection().ConectarBD(configuration, BaseConnection.SQL, ConexSQL.CX_PROL);
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@COD_PERIODO", rsTombolaWeb.periodo);
+            parameters.Add("@LISTACUVS", rsTombolaWeb.listaCuvs);
+            parameters.Add("@LISTAPRECIOS", rsTombolaWeb.listaPrecios);
+
+            using (IDbConnection con = abConnetion.Conectar(rsTombolaWeb.isoPais))
+            {
+
+                return (await con.QueryFirstAsync<RpTombolaWeb>("P_CARGAR_TOMBOLA_WEB", parameters, commandType: CommandType.StoredProcedure));
+            }
         }
     }
 }

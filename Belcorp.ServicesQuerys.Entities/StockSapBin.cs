@@ -7,7 +7,7 @@ namespace Belcorp.ServicesQuerys.Entities
     public class StockSapBin
     {
         public string CodigoSap { get; set; }
-        
+        public int estado { get; set; }
 
     }
 }
