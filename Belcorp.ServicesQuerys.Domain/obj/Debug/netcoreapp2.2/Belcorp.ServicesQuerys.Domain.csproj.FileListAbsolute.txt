@@ -1,5 +1,0 @@
-E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.2\Belcorp.ServicesQuerys.Domain.deps.json
-E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\bin\Debug\netcoreapp2.2\Belcorp.ServicesQuerys.Domain.dll
-E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.2\Belcorp.ServicesQuerys.Domain.csproj.CoreCompileInputs.cache
-E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.2\Belcorp.ServicesQuerys.Domain.AssemblyInfoInputs.cache
-E:\Belcorp\Solutions\SolutionBelcorpServices\Belcorp.ServicesQuerys.Domain\obj\Debug\netcoreapp2.2\Belcorp.ServicesQuerys.Domain.AssemblyInfo.cs

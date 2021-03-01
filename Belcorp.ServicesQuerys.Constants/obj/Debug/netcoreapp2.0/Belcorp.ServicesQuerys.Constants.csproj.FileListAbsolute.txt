@@ -1,9 +1,0 @@
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.deps.json
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.dll
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\bin\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.pdb
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.csprojAssemblyReference.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.csproj.CoreCompileInputs.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.AssemblyInfoInputs.cache
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.AssemblyInfo.cs
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.dll
-E:\Belcorp\Solutions\BelcorpApiServices\Belcorp.ServicesQuerys.Constants\obj\Debug\netcoreapp2.0\Belcorp.ServicesQuerys.Constants.pdb
